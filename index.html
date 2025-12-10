@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Catalog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="top">
+      <div class="brand">
+        <div class="brand-badge">CAT</div>
+        <div>
+          <h1>Product Catalog</h1>
+          <div class="sub">Live data from Google Sheets</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Ürün ara..." />
+      </div>
+    </header>
+
+    <main>
+      <div id="status" class="status hidden"></div>
+
+      <section id="categoryView">
+        <h2 class="section-title">Kategoriler</h2>
+        <div id="categories" class="grid categories"></div>
+        <div id="catEmpty" class="empty hidden">
+          Henüz kategori bulunamadı. Google Sheets verinizi kontrol edin.
+        </div>
+      </section>
+
+      <section id="productView" class="hidden">
+        <div class="product-head">
+          <button id="back" class="ghost">← Kategorilere Dön</button>
+          <div class="head-titles">
+            <h2 id="viewTitle" class="section-title">Ürünler</h2>
+            <div id="viewSubtitle" class="sub"></div>
+          </div>
+        </div>
+
+        <div id="products" class="grid products"></div>
+
+        <div id="prodEmpty" class="empty hidden">
+          Bu görünüm için ürün bulunamadı.
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>Images are served from /img • Data from Google Sheets</span>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
