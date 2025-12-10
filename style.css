@@ -1,0 +1,224 @@
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #0b1220;
+  --panel: #0f1a2c;
+  --line: #1e2c45;
+  --text: #e6eefc;
+  --muted: #9bb0cf;
+  --accent: #3aa0ff;
+  --accent-2: #6ee7b7;
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --r: 14px;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 10% 10%, rgba(58,160,255,.08), transparent 35%),
+              radial-gradient(circle at 90% 0%, rgba(110,231,183,.08), transparent 35%),
+              var(--bg);
+  color: var(--text);
+}
+
+.wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px 18px 40px;
+}
+
+.top{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+}
+
+.brand{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-badge{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #04111f;
+}
+
+h1{
+  margin: 0;
+  font-size: 22px;
+}
+
+.sub{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.controls{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#search{
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0a162b;
+  color: var(--text);
+  outline: none;
+}
+
+.section-title{
+  margin: 22px 0 12px;
+  font-size: 18px;
+}
+
+.status{
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+.status.error{
+  border-color: rgba(255,107,107,.35);
+  color: #ffd1d1;
+  background: rgba(255,107,107,.08);
+}
+
+.hidden{ display: none !important; }
+
+.grid{
+  display: grid;
+  gap: 12px;
+}
+
+.categories{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.products{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 820px){
+  .categories{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .products{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1060px){
+  .categories{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .products{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.cat-card{
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(58,160,255,.07), transparent 35%),
+              var(--panel);
+  border-radius: var(--r);
+  padding: 16px;
+  cursor: pointer;
+  transition: transform .12s ease, border-color .12s ease;
+}
+
+.cat-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(58,160,255,.35);
+}
+
+.cat-title{
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.cat-count{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.product-head{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ghost{
+  padding: 8px 11px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.prod-card{
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: var(--r);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.prod-img{
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #0a162b;
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.prod-name{
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.prod-meta{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.prod-price{
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.empty{
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px dashed rgba(155,176,207,.35);
+  color: var(--muted);
+  background: rgba(255,255,255,.02);
+}
+
+.foot{
+  margin-top: 32px;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: .75;
+}
